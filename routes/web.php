@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\ImagesController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ProductController;
 
@@ -19,3 +20,8 @@ Route::get('/', function () {
 });
 
 Route::resource('/product', ProductController::class);
+
+Route::controller(ImagesController::class)->group(function () {
+    Route::get('image-upload', 'index');
+    Route::post('image-upload', 'imageUpload')->name('image.store');
+});
