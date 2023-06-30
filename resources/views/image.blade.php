@@ -28,9 +28,9 @@
                     @csrf
                     <div class="mb-3">
                         <label class="form-label">Image</label>
-                        <input type="file" name="image[]" class="form-control @error('image.*')is-invalid @enderror" multiple>
+                        <input type="file" name="image[]" class="form-control @error('image.*')is-invalid @enderror" multiple required>
                         @error('image.*')
-                        <span class="text-danger">{{$$message}}</span>
+                        <span class="text-danger">{{$message}}</span>
                         @enderror
                     </div>
                     <div class="mb-3">
